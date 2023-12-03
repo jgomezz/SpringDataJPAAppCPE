@@ -1,10 +1,21 @@
 package pe.edu.tecsup.springbootapp.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="productos")
 public class Producto {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
 	private Long categorias_id;
-	private Categoria categoria;
+	//private Categoria categoria;
 	private String nombre;
 	private String descripcion;
 	private Double precio;
@@ -30,14 +41,14 @@ public class Producto {
 		this.categorias_id = categorias_id;
 	}
 
-	public Categoria getCategoria() {
-		return categoria;
-	}
+//	public Categoria getCategoria() {
+//		return categoria;
+//	}
 
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
-
+//	public void setCategoria(Categoria categoria) {
+//		this.categoria = categoria;
+//	}
+//
 	public String getNombre() {
 		return nombre;
 	}
@@ -104,7 +115,7 @@ public class Producto {
 
 	@Override
 	public String toString() {
-		return "Producto [id=" + id + ", categorias_id=" + categorias_id + ", categoria=" + categoria + ", nombre="
+		return "Producto [id=" + id + ", categorias_id=" + categorias_id + ", nombre="
 				+ nombre + ", descripcion=" + descripcion + ", precio=" + precio + ", stock=" + stock
 				+ ", imagen_nombre=" + imagen_nombre + ", imagen_tipo=" + imagen_tipo + ", imagen_tamanio="
 				+ imagen_tamanio + ", estado=" + estado + "]";

@@ -13,6 +13,4 @@ public interface CategoriaRepository extends CrudRepository<Categoria, Long>{
 	List<Categoria> findAll();
 
 	
-	//List<Categoria> listar() throws Exception;
-	
 }

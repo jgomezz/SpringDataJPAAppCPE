@@ -17,9 +17,9 @@ class CategoriaServiceImplTest {
 	CategoriaService categoriaService;
 	
 	@Test
-	void testListar() throws Exception {
+	void testFindAll() throws Exception {
 				
-		List<Categoria> cats = categoriaService.listar();
+		List<Categoria> cats = categoriaService.findAll();
 	
 		// Verifica que existan categorias
 		//     VALOR_ESPERADO  VALOR_OBTENIDO

@@ -21,9 +21,9 @@ public class CategoriaServiceImpl implements CategoriaService {
 
 	
 	@Override
-	public List<Categoria> listar() throws Exception {
+	public List<Categoria> findAll() throws Exception {
 		
-		log.info("Call listar() ....! ");
+		log.info("Call findAll() ....! ");
 		return categoriaRepository.findAll();
 	}  
 

@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import pe.edu.tecsup.springbootapp.entities.Categoria;
 import pe.edu.tecsup.springbootapp.entities.Producto;
 
 @SpringBootTest
@@ -36,7 +37,12 @@ class ProductoServiceImplTest {
 		int totalAntes = productos.size();
 		
 		Producto producto = new Producto();
-		producto.setCategorias_id(1L);
+		
+		// Creo el objeto categoria oara usarlo en el objeto producto
+		Categoria categoria = new Categoria();
+		categoria.setId(1L);
+		producto.setCategoria(categoria);
+		
 		producto.setNombre("AMD");
 		producto.setDescripcion("AMD X10");
 		producto.setPrecio(280.0);

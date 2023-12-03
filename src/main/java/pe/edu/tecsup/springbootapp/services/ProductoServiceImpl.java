@@ -1,6 +1,7 @@
 package pe.edu.tecsup.springbootapp.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,6 +40,20 @@ public class ProductoServiceImpl implements ProductoService {
 		log.info("call eliminar(id: " + id + ")");
 		productoRepository.deleteById(id);
 		
+	}
+
+	@Override
+	public Producto findById(Long id) throws Exception {
+		// TODO Auto-generated method stub
+		log.info("call findById(id: " + id + ")");
+		
+		Optional<Producto> optionalProd 
+			= productoRepository.findById(id);
+		
+		if ( optionalProd.isPresent())
+			return optionalProd.get();
+		else
+			throw new Exception("Not found record...!");
 	}  
 	
 }
